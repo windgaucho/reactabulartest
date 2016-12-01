@@ -7,37 +7,37 @@ const expedientes =  [
        "fechaUltimoMovimiento":"06\/02\/2012",
        "caratula":"TEST DATA STRING",
        "ubicacionActual":"TEST DATA STRINGTEST DATA STRINGTEST DATA STRINGTEST DATA STRING",
-       "claveExpediente":"1111111"
+       "claveExpediente":"1"
     },
     {
        "fechaUltimoMovimiento":"27\/05\/1998",
        "caratula":"TEST DATA STRING TEST DATA STRING TEST DATA STRING TEST DATA STRING TEST DATA STRING TEST DATA STRING TEST DATA STRING TEST DATA STRING TEST DATA STRING",
        "ubicacionActual":"TEST DATA STRINGTEST DATA STRINGTEST DATA STRINGTEST DATA STRING",
-       "claveExpediente":"11111111"
+       "claveExpediente":"2"
     },
     {
        "fechaUltimoMovimiento":"28\/03\/2011",
        "caratula":"TEST DATA STRINGTEST DATA STRINGTEST DATA STRINGTEST DATA STRINGTEST DATA STRINGTEST DATA STRINGTEST DATA STRING",
        "ubicacionActual":"TEST DATA STRING",
-       "claveExpediente":"1111111111111"
+       "claveExpediente":"3"
     },
     {
        "fechaUltimoMovimiento":"09\/01\/2007",
        "caratula":"TEST DATA STRINGTEST DATA STRINGTEST DATA STRINGTEST DATA STRING",
        "ubicacionActual":"TEST DATA STRINGTEST DATA STRINGTEST DATA STRINGTEST DATA STRING",
-       "claveExpediente":"1111111111"
+       "claveExpediente":"4"
     },
     {
        "fechaUltimoMovimiento":"22\/11\/2016",
        "caratula":"TEST DATA STRINGTEST DATA STRINGTEST DATA STRINGTEST DATA STRINGTEST DATA STRING",
        "ubicacionActual":"TEST DATA STRING",
-       "claveExpediente":"1111111111"
+       "claveExpediente":"5"
     },
     {
        "fechaUltimoMovimiento":"22\/11\/2016",
        "caratula":"TEST DATA STRINGTEST DATA STRINGTEST DATA STRINGTEST DATA STRING",
        "ubicacionActual":"TEST DATA STRING",
-       "claveExpediente":"1111111111"
+       "claveExpediente":"6"
     },
     {
        "fechaUltimoMovimiento":"22\/11\/2016",
@@ -46,26 +46,26 @@ const expedientes =  [
        "unid":"03257BD300506CC903257ED100427F5B",
        "ipServidor":"172.16.1.58",
        "ubicacionActual":"TEST DATA STRINGTEST DATA STRINGTEST DATA STRING",
-       "claveExpediente":"11111111111"
+       "claveExpediente":"7"
     },
     {
        "fechaUltimoMovimiento":"21\/11\/2016",
        "caratula":"VINET CELESTINO C\/ PROVINCIA DEL NEUQUEN S\/DILIGENCIA PRELIMINAR",
        "ubicacionActual":"TEST DATA STRING",
-       "claveExpediente":"111111111"
+       "claveExpediente":"8"
     },
     {
        "fechaUltimoMovimiento":"17\/11\/2016",
        "caratula":"TEST DATA STRINGTEST DATA STRINGTEST DATA STRINGTEST DATA STRINGTEST DATA STRINGTEST DATA STRING",
        "unid":"03257BD300506CC903257D1C00473E15",
        "ubicacionActual":"TEST DATA STRING",
-       "claveExpediente":"11111111"
+       "claveExpediente":"9"
     },
     {
        "fechaUltimoMovimiento":"17\/11\/2016",
        "caratula":"TEST DATA STRINGTEST DATA STRINGTEST DATA STRING",
        "ubicacionActual":"TEST DATA STRING",
-       "claveExpediente":"111111111"
+       "claveExpediente":"10"
     },
  ];
 

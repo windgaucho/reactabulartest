@@ -18,15 +18,10 @@ class FormBuscarExpedientes extends Component {
               </Card.Content>
               <Card.Content>
                 <div>DATA FOR FIND HERE</div>
-                <Button
-                  color="blue"
-                  style={{marginTop: 10}}
-                  Buscar>
-                </Button>
               </Card.Content>
             </Card>
           </Grid.Column>
-          <Grid.Column width={12}>
+          <Grid.Column width={11}>
             <TablaExpedientes expedientes={expedientes} />
           </Grid.Column>
         </Grid>

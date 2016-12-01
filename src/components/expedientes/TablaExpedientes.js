@@ -1,4 +1,6 @@
 import React, { PropTypes, Component } from 'react';
+import ReactDOM from 'react-dom';
+
 import * as Sticky from 'reactabular-sticky';
 import * as Virtualized from 'reactabular-virtualized';
 import * as Table from 'reactabular-table';
@@ -74,23 +76,49 @@ class TablaExpedientes extends Component {
               }
           },
         },
-      ]
+      ],
+      ancho: 0
     };
 
     this.tableHeader = null;
     this.tableBody = null;
     this.height = window.innerHeight;
+    this.resizeHandler = this.resizeHandler.bind(this);
   }
 
   componentDidMount() {
+    window.addEventListener('resize', this.resizeHandler);
+    this.resizeHandler();
+    // Force update necesario por las refs en el Header/Body.
+    // Al momento se encuentra en desarrollo en reactabular para evitar esto.
     this.forceUpdate();
   }
 
-  abrirExpediente(id) {
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.resizeHandler);
+  }
+
+  resizeHandler(event) {
+    const stateCopy = Object.assign({}, this.state);
+    const ancho = ReactDOM.findDOMNode(this).offsetWidth;
+    const porc = {
+      p10: ancho * 10 / 100,
+      p20: ancho * 20 / 100,
+      p30: ancho * 30 / 100,
+      p40: ancho * 40 / 100
+    };
+
+    stateCopy.ancho = ancho;
+    stateCopy.columns[0].props.style = {width: porc.p20, minWidth: porc.p20, maxWidth: porc.p20};
+    stateCopy.columns[1].props.style = {width: porc.p40, minWidth: porc.p40, maxWidth: porc.p40};
+    stateCopy.columns[2].props.style = {width: porc.p30, minWidth: porc.p30, maxWidth: porc.p30};
+    stateCopy.columns[3].props.style = {width: porc.p10, minWidth: porc.p10, maxWidth: porc.p10};
+
+    this.setState(stateCopy);
   }
 
   render() {
-    const { columns } = this.state;
+    const { columns, ancho } = this.state;
     const { expedientes } = this.props;
     const resolvedRows = resolve.resolve({ columns, method: resolve.index })(expedientes);
 
@@ -108,9 +136,7 @@ class TablaExpedientes extends Component {
 
             <Sticky.Header
               style={{
-                width: "100%",
-                minWidt: "100%",
-                maxWidth: "100%"
+                width: {ancho}
               }}
               ref={tableHeader => {
                 this.tableHeader = tableHeader && tableHeader.getRef();
@@ -120,11 +146,9 @@ class TablaExpedientes extends Component {
 
             <Virtualized.Body
               rows={resolvedRows}
-              rowKey="unid"
+              rowKey="claveExpediente"
               style={{
-                width: "100%",
-                minWidth: "100%",
-                maxWidth: "100%"
+                width: {ancho}
               }}
               height={this.height}
               ref={tableBody => {
